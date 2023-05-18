@@ -29,7 +29,7 @@ function NavButton(props: ButtonProps) {
             onClick={() => {
                 document.getElementById(props.navToElement)?.scrollIntoView({behavior: "smooth"})
             }}>
-            About Me
+            {props.title}
         </Button>
     )
 }
