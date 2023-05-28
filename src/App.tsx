@@ -1,38 +1,32 @@
 import './App.css'
 import Navbar from "./components/navbar.tsx";
-import {Box, Container, VStack, Text, Heading} from "@chakra-ui/react";
+import {Box, Container, VStack, Heading, useColorModeValue} from "@chakra-ui/react";
 import ScrollToTopButton from "./components/scroll-to-top-button.tsx";
 import Project from "./components/project.tsx";
 import VTuberTwitchFinder from "./projects/vtuber-twitch-finder.tsx";
 import LostNFound from "./projects/lost-n-found.tsx";
+import AboutMe from "./components/about-me.tsx";
+import Education from "./components/education.tsx";
 
 function App() {
-
     return (
         <>
-            <Navbar/>
             <ScrollToTopButton/>
-            {/* About Me Section */}
-            <Box mt={10}>
-                <Container maxW={"1000"} id={"aboutme"}>
-                    <Heading>Hi, I'm Jean!</Heading>
-                    <Text fontSize={24}> I am a software developer with three years of professional experience.
-                        Programming
-                        is my passion, and I love solving complex problems and thinking outside the box. I enjoy coding
-                        in
-                        my free time, constantly
-                        learning and exploring new technologies. I have a professional background in mobile and desktop
-                        development, with hobby projects created in web and game engines.
-                        I strive to create something that is functional yet enjoyable to use. Check out my portfolio for
-                        a showcase of my experience and projects.
-                    </Text>
-                </Container>
+            <Box bg={useColorModeValue("blue.100", "blue.900")} height={"100vh"}>
+                <Navbar/>
+                {/* About Me Section */}
+                <Box mt={10} id={"aboutme"}>
+                    <AboutMe/>
+                </Box>
+            </Box>
+            {/* Experience Section */}
+            <Box id={"education"}>
+                <Education/>
             </Box>
             {/* Experience Section */}
             <Box mt={10}>
                 <Container maxW={"1000"} id={"experience"}>
-                    <Heading>Professional Experience</Heading>
-                    <Heading>Self-Taught Experience</Heading>
+                    <Heading>Experience</Heading>
                 </Container>
             </Box>
             <Box mt={10}>
@@ -45,6 +39,7 @@ function App() {
 
                 </Container>
             </Box>
+            <Box h={1000}></Box>
         </>
     )
 }

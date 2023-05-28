@@ -40,8 +40,8 @@ export default function Project(details: ProjectDetails) {
             <CardBody>
                 <VStack>
                     <HStack>
-                        {details.languages.map((lang) => (
-                            <Box>
+                        {details.languages.map((lang, index) => (
+                            <Box key={index}>
                                 {lang.name}
                             </Box>
                         ))}
