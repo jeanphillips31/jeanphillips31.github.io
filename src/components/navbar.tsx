@@ -4,7 +4,7 @@
     Flex,
     HStack,
     IconButton, Image, Select,
-    Stack, useBreakpointValue,
+    Stack, Text, useBreakpointValue,
     useColorMode,
     useColorModeValue,
     useDisclosure
@@ -40,11 +40,10 @@ function Buttons() {
     const {t} = useTranslation();
     return (
         <>
-            <NavButton navToElement={"aboutme"} title={t("aboutme_button")}/>
-            <NavButton navToElement={"education"} title={t("education_button")}/>
-            <NavButton navToElement={"skills"} title={t("skills_button")}/>
-            <NavButton navToElement={"experience"} title={t("experience_button")}/>
-            <NavButton navToElement={"projects"} title={t("projects_button")}/>
+            <NavButton navToElement={"home"} title={t("home_title")}/>
+            <NavButton navToElement={"skills"} title={t("skills_title")}/>
+            <NavButton navToElement={"experience"} title={t("experience_title")}/>
+            <NavButton navToElement={"projects"} title={t("projects_title")}/>
         </>
     )
 }
@@ -65,11 +64,21 @@ function LanguageOptions() {
             <Select defaultValue={"es"} variant='outline' onChange={(e) => i18n.changeLanguage(e.target.value)}>
                 {LANGUAGES.map(({code, label}) => (
                     <option key={code} value={code}>
-                        {label}
+                        <Text>{label}</Text>
                     </option>
                 ))}
             </Select>
         </>
+    )
+}
+
+function WebsiteLogo() {
+    const {t} = useTranslation();
+    return (
+        <HStack spacing={5}>
+            <Image alt={"pfp"} src={"/vite.svg"} border={"full"}/>
+            <Text fontSize={24}>{t("name")}</Text>
+        </HStack>
     )
 }
 
@@ -78,35 +87,42 @@ export default function Navbar() {
     const isDesktop = useBreakpointValue({base: false, lg: true})
 
     return (
-        <Box as="section" bg={useColorModeValue("gray.100", "gray.900")}>
-            <Box as="nav" bg="bg-surface" boxShadow="sm">
+        <Flex as="section" bg={useColorModeValue("gray.100", "gray.900")} w={"100%"}>
+            <Flex as="nav" bg="bg-surface" boxShadow="sm" w={"100%"}>
                 <Container py={{base: '4', lg: '5'}} maxW={"1500"}>
                     <HStack spacing="10" justify="space-between">
-                        <Image alt={"home"} src={"/vite.svg"}/>
-                        {isDesktop ? (
-                            <Flex justify="space-between" flex="1">
-                                <ButtonGroup variant="link" spacing="8">
-                                    <Buttons/>
-                                </ButtonGroup>
-                                <HStack spacing="3">
-                                    <LanguageOptions/>
-                                    <LightModePicker/>
-                                </HStack>
-                            </Flex>
-                        ) : (
-                            <HStack>
-                                <LanguageOptions/>
-                                <LightModePicker/>
-                                <IconButton size={"md"}
-                                            icon={isOpen ? <CloseIcon/> : <HamburgerIcon/>}
-                                            aria-label={"Open Menu"}
-                                            onClick={isOpen ? onClose : onOpen}
-                                />
-                            </HStack>
-                        )}
+
+                        {isDesktop ?
+                            (
+                                <Flex justify="space-between" flex="1">
+                                    <WebsiteLogo/>
+                                    <HStack spacing="3">
+                                        <ButtonGroup variant="link" spacing="8">
+                                            <Buttons/>
+                                        </ButtonGroup>
+                                        <LanguageOptions/>
+                                        <LightModePicker/>
+                                    </HStack>
+                                </Flex>
+                            ) :
+                            (
+                                <Flex justify="space-between" flex="1">
+                                    <WebsiteLogo/>
+                                    <HStack alignItems={"center"} justifyContent={"center"}>
+                                        <LanguageOptions/>
+                                        <LightModePicker/>
+                                        <IconButton size={"md"}
+                                                    icon={isOpen ? <CloseIcon/> : <HamburgerIcon/>}
+                                                    aria-label={"Open Menu"}
+                                                    onClick={isOpen ? onClose : onOpen}
+                                        />
+                                    </HStack>
+                                </Flex>
+
+                            )}
                     </HStack>
                 </Container>
-            </Box>
+            </Flex>
             {/* Handle mobile menu*/}
             {isOpen ? (
                 <Box pb={4}>
@@ -115,7 +131,7 @@ export default function Navbar() {
                     </Stack>
                 </Box>
             ) : null}
-        </Box>
+        </Flex>
 
     )
 }

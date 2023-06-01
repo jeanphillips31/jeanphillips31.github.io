@@ -1,12 +1,28 @@
 ﻿{
-  "aboutme_button": "About Me",
-  "education_button": "Education",
-  "skills_button": "Skills",
-  "experience_button": "Experience",
-  "projects_button": "Projects",
+  "home_title": "Home",
+  "skills_title": "Skills",
+  "experience_title": "Experience",
+  "projects_title": "Projects",
   "resume": "Resume",
   "hi": "Hi,",
   "myname": "I'm Jean!",
   "fullstack": "A Fullstack Developer \uD83D\uDE80",
-  "aboutme": "I am a passionate full-stack developer with 3 years of professional experience. Programming is my passion, and I love solving complex problems and thinking outside the box. I enjoy coding in my free time, constantly learning and exploring new technologies. I have a professional background desktop development, with hobby projects created in web and game engines. Check out my portfolio for a showcase of my experience and projects."
+  "aboutme": "I am a passionate full-stack developer with 3 years of professional experience. Programming is my passion, and I love solving complex problems and thinking outside the box. I enjoy coding in my free time, constantly learning and exploring new technologies. I have a professional background desktop development, with hobby projects created in web and game engines. Check out my portfolio for a showcase of my experience and projects.",
+  "name": "Jean Phillips",
+  "frontend": "Front-end",
+  "backend": "Back-end",
+  "tools": "Tools",
+  "engines": "Game Engines",
+  "exp_jaix_name": "Jaix Software",
+  "exp_jaix_pos": "Software Developer",
+  "exp_jaix_full_title": "Software Developer at Jaix Software",
+  "exp_jaix_start_date": "April 2019",
+  "exp_jaix_end_date": "Feb 2022",
+  "exp_jaix_jobs": [
+    "Designed a Warehousing application using VB.NET and C#.",
+    "Ported an old VB.NET Application to C# using a new View/ViewModel/WebAPI/Repo architecture.",
+    "Implemented MassTransit, RabbitMQ, and Docker in the application architecture.",
+    "Specialized in designing a specific module for assigning inventory to freight vehicles for shipping.",
+    "Developed UI, Viewmodels, Endpoints, and queries for the assigned module."
+  ]
 }
