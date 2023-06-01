@@ -19,10 +19,9 @@
   "exp_jaix_start_date": "April 2019",
   "exp_jaix_end_date": "Feb 2022",
   "exp_jaix_jobs": [
-    "Designed a Warehousing application using VB.NET and C#.",
-    "Ported an old VB.NET Application to C# using a new View/ViewModel/WebAPI/Repo architecture.",
-    "Implemented MassTransit, RabbitMQ, and Docker in the application architecture.",
-    "Specialized in designing a specific module for assigning inventory to freight vehicles for shipping.",
-    "Developed UI, Viewmodels, Endpoints, and queries for the assigned module."
+    "General development on and porting of legacy VB.NET modules into C# of a Warehousing application",
+    "Utilised Model View View Model (MVVM) design patterns for modular and reusable UI",
+    "Helped transition into an event driven architecture using MassTransit, RabbitMQ and Docker",
+    "Led full-stack development on an integration between inventory and freight modules"
   ]
 }

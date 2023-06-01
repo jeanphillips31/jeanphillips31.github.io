@@ -19,10 +19,9 @@
   "exp_jaix_start_date": "2019年4月",
   "exp_jaix_end_date": "2022年2月",
   "exp_jaix_jobs": [
-    "VB.NETとC#を使用してウェアハウスアプリケーションを設計しました。",
-    "新しいView/ViewModel/WebAPI/Repoアーキテクチャを使用して、古いVB.NETアプリケーションをC#に移植した。",
-    "アプリケーションのアーキテクチャにMassTransit、RabbitMQ、Dockerを実装した。",
-    "在庫を貨物車両に割り当てて出荷するための特定のモジュールの設計に特化した。",
-    "担当モジュールのUI、Viewmodels、Endpoint、Queryを開発した。"
+    "ウェアハウスアプリケーションのレガシーVB.NETモジュールのC#への移植と開発全般。",
+    "モジュール化された再利用可能なUIを実現するMVVM（Model View Model）デザインパターンの活用",
+    "MassTransit、RabbitMQ、Dockerを用いたイベント駆動型アーキテクチャへの移行を支援した。",
+    "在庫モジュールと貨物モジュールの統合をフルスタック開発で主導"
   ]
 }
