@@ -23,5 +23,9 @@
     "Utilised Model View View Model (MVVM) design patterns for modular and reusable UI",
     "Helped transition into an event driven architecture using MassTransit, RabbitMQ and Docker",
     "Led full-stack development on an integration between inventory and freight modules"
-  ]
+  ],
+  "proj_vtubersapp_title" : "Vtuber Twitch Finder",
+  "proj_vtubersapp_desc": "vtubers.app is a website designed to help the user find VTubers that they would like to watch. The website allows the user to filter streams based on Language and Games. The user is also able to view details about a given streamer, including their current viewership, top clips of the month, and emotes available on the channel. All the data is retrieved through various API's collected using APS.NET, and then sent to the Next.js website through axios.",
+  "proj_lostnfound_title": "LostNFound",
+  "proj_lostnfound_desc": "LostNFound is a short hide and seek style game, where the player must find all wolves before the timer runs out. This game is designed using the Godot Engine and GDScript. The game has multiple difficulty options and allows the player to create their own custom difficulty that is read from a file saved alongside the game data and leaderboard information."
 }

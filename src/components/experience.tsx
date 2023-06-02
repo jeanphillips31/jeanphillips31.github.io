@@ -35,7 +35,7 @@ function Job(props: Props) {
                     {props.startDate} - {props.endDate}
                 </Heading>
                 <Box>
-                    <UnorderedList listStyleType={"circle"} mx={10} mb={5}>
+                    <UnorderedList listStyleType={"circle"} mx={10} mb={5} textAlign={"left"}>
                         {props.jobs.map((j) => (
                             <ListItem key={j.substring(0, 10) + props.companyName}>
                                 <Text>{j}</Text>

@@ -8,6 +8,7 @@ import LostNFound from "./projects/lost-n-found.tsx";
 import AboutMe from "./components/about-me.tsx";
 import Skills from "./components/skills.tsx";
 import Experience from "./components/experience.tsx";
+import Footer from "./components/footer.tsx";
 
 function App() {
     return (
@@ -43,7 +44,7 @@ function App() {
                     </VStack>
                 </Box>
             </Flex>
-            <Box h={1000}></Box>
+            <Footer/>
         </>
     )
 }

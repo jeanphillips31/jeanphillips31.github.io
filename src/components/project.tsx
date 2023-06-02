@@ -1,5 +1,6 @@
-﻿import {Box, Card, CardBody, CardHeader, HStack, IconButton, Link, VStack} from "@chakra-ui/react";
-import {ReactElement, ReactNode} from "react";
+﻿import {Box, Button, Flex, Heading, HStack, Image, Link, Text} from "@chakra-ui/react";
+import {FaPlayCircle} from "react-icons/all";
+import {FaGithub} from "react-icons/fa";
 
 export enum ProjectType {
     Website,
@@ -13,42 +14,62 @@ export interface Language {
 
 export interface ProjectDetails {
     name: string,
-    description: ReactNode,
+    description: string,
     projectType: ProjectType,
-    url?: string,
-    urlIcon?: ReactElement,
+    liveUrl?: string,
+    github?: string,
     previewPath: string,
     languages: Language[]
 }
 
 export default function Project(details: ProjectDetails) {
     return (
-        <Card>
-            <CardHeader>
-                <HStack spacing={5} justify={"center"}>
-                    <Box>{details.name}</Box>
-                    {details.url && (
-                        <Link href={details.url}
-                              rel="noopener noreferrer"
-                              target="_blank">
-                            <IconButton aria-label={details.name} variant='outline' icon={details.urlIcon}
-                                        size={"sm"}></IconButton>
-                        </Link>
-                    )}
+            <Box borderWidth={"1px"} borderRadius={"lg"} shadow={"md"} width={900} p={5}>
+                <HStack spacing={10}>
+                    <Image width={300} src={"/langs/shared/ts.png"}/>
+                    <Box>
+                            <Heading size={"lg"} textAlign={"left"}>
+                                {details.name}
+                            </Heading>
+                        <HStack mt={5}>
+                            <Text>Made using:</Text>
+                            <HStack spacing={3}>
+                                {details.languages.map((lang, index) => (
+                                    <Box key={index}>
+                                        <Image src={lang.previewPath} width={30}/>
+                                    </Box>
+                                ))}
+                            </HStack>
+                        </HStack>
+                        <Flex textAlign={"left"} mt={5}>
+                            {details.description}
+                        </Flex>
+                        <HStack mt={5}>
+                            {/* Check if we have a live demo url, if so display it */}
+                            {details.liveUrl && (
+                            <Link href={details.liveUrl}
+                                  rel="noopener noreferrer"
+                                  target="_blank">
+                                <Button leftIcon={<FaPlayCircle/>} aria-label={details.name} variant='outline'
+                                        size={"sm"}>
+                                    <Text>Live Demo</Text>
+                                </Button>
+                            </Link>
+                            )}
+                            {/* Check if we have a github url, if so display it */}
+                            {details.github && (
+                                <Link href={details.github}
+                                      rel="noopener noreferrer"
+                                      target="_blank">
+                                    <Button leftIcon={<FaGithub/>} aria-label={details.name} variant='outline'
+                                            size={"sm"}>
+                                        <Text>Code</Text>
+                                    </Button>
+                                </Link>
+                            )}
+                        </HStack>
+                    </Box>
                 </HStack>
-            </CardHeader>
-            <CardBody>
-                <VStack>
-                    <HStack>
-                        {details.languages.map((lang, index) => (
-                            <Box key={index}>
-                                {lang.name}
-                            </Box>
-                        ))}
-                    </HStack>
-                </VStack>
-                {details.description}
-            </CardBody>
-        </Card>
+            </Box>
     )
 }

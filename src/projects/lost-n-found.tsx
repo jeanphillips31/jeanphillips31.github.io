@@ -1,17 +1,17 @@
 ﻿import {ProjectDetails, ProjectType} from "../components/project.tsx";
-import {Box} from "@chakra-ui/react";
-import {AddIcon} from "@chakra-ui/icons";
+import {useTranslation} from "react-i18next";
 
 export default function LostNFound(): ProjectDetails {
+    const {t} = useTranslation();
+    
     return {
-        name: "LostNFound",
-        url: "https://github.com/laviathan101/LostNFound",
-        urlIcon: <AddIcon/>,
+        name: t("proj_lostnfound_title"),
+        github: "https://github.com/jeanphillips31/LostNFound",
         projectType: ProjectType.Game,
         previewPath: "",
         languages: [
-            {name: "GDScript", previewPath: ""}
+            {name: "GDScript", previewPath: "/langs/game-engines/godot.png"}
         ],
-        description: <Box>Cool game!</Box>,
+        description: t("proj_lostnfound_desc"),
     };
 }
